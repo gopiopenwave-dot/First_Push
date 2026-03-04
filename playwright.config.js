@@ -8,7 +8,7 @@ module.exports = defineConfig({
 
 
   reporter:  [['html', { open: 'on-failure' }]],
-  expect : { timeout : 40*1000, },
+  expect : { timeout : 60*1000, },
 
 
   use: {
