@@ -22,7 +22,7 @@ constructor(page){
     this.C_GSTyes = page.locator('#chkGSTInvoiceYes');
     this.C_billaddress = page.locator('#fillBillingAddress');
     this.savebtn = page.getByRole('button', { name: 'Save' });
-    this.confirmationmsg = page.getByRole('button', { name: 'OK' });
+    this.confirmationmsg = page.locator("//button[normalize-space()='OK']")
 }
 
 async movetocustomerpage (){

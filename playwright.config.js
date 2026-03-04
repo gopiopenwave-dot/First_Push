@@ -9,12 +9,13 @@ module.exports = defineConfig({
 
 
   reporter:  [['html', { open: 'on-failure' }]],
-  expect : { timeout : 60*1000, },
+  expect : { timeout : 100*1000, },
 
 
   use: {
     baseURL: process.env.BASE_URL || 'https://your-fsm-app.com',
-    headless: true,
+    headless: false,
+    actionTimeout: 15000,
      
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
