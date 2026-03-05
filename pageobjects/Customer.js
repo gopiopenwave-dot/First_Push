@@ -47,9 +47,12 @@ async addnewcustomer (firstname,legalname,email,password,confirmpassword,cellno,
     await this.C_GSTyes.check();
     await this.C_billaddress.check();
     await this.savebtn.click();
-    await this.confirmationmsg.click();
 }
-
+ async confirmpopup(params) {
+        await expect(this.confirmationmsg).toBeVisible();
+        await this.confirmationmsg.click();
+    
+ }
 
 }
 

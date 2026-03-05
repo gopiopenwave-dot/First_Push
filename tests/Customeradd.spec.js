@@ -48,6 +48,7 @@ test('Add new customer - Martha', async({page})=>{
         Customer2.city,
         Customer2.postalcode,
     );
+    await customerpg.confirmpopup();    
 });
 
 
