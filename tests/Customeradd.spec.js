@@ -26,8 +26,9 @@ test('Add new customer-Jhon', async ({page}) => {
         Customer1.country,
         Customer1.state,
         Customer1.city,
-        Customer1.postalcode,
+        Customer1.postalcode,        
     );
+    console.log(Customer1.firstname + " new customer has been created.");
 });
 
 
@@ -48,7 +49,8 @@ test('Add new customer - Martha', async({page})=>{
         Customer2.city,
         Customer2.postalcode,
     );
-    await customerpg.confirmpopup();    
+    await customerpg.confirmpopup(); 
+    console.log(Customer2.firstname + " new customer has been created.");   
 });
 
 
