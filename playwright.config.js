@@ -16,6 +16,7 @@ module.exports = defineConfig({
     baseURL: process.env.BASE_URL || 'https://your-fsm-app.com',
     headless: false,
     actionTimeout: 15000,
+    slowMo: 2000,
      
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

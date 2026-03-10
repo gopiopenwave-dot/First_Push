@@ -31,6 +31,10 @@ test ('Add new workorder for Amar', async ({page})=>{
         Workorderdata.jobstatus,);
     await workorderaddpg.confirmationpopup();
     console.log("New workorder has been created for " + Workorderdata.customerfullname);
+    await workorderaddpg.printCreatedWorkorder();
+    
+   
+    
           
 });
 

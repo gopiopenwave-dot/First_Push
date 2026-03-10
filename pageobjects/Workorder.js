@@ -21,6 +21,8 @@ class Workorderpage{
         this.status = page.locator('#MainStatus');
         this.workordersavebtn = page.getByText('Save', { exact: true });
         this.confirmpopup = page.getByRole('button', { name: 'OK' });
+        this.workorderlistpg = page.locator("//h2[@class='common-card-heading'][normalize-space()='Work Order List']");
+        this.newworkorder = page.locator('.workOrder.custom-textoverflow-ellipsis').first();
     }
 
 async movetoworkorderaddpage (){
@@ -33,8 +35,7 @@ async addnewworkorder(customername,customerfullname,startdate,enddate,precheckli
     await expect(this.Existingcustomer).toBeVisible();
     await this.customername.fill(customername);
         await this.page.getByText(customerfullname).click();
-    await this.startdate.click();
-    await this.page.fill(startdate);
+    await this.startdate.fill(startdate);
     await this.enddate.fill(enddate);
     await this.prechecklist.selectOption(prechecklist);
     await this.classfication.selectOption(classification);
@@ -46,13 +47,22 @@ async addnewworkorder(customername,customerfullname,startdate,enddate,precheckli
     await this.description.fill(description);
     await this.status.selectOption(jobstatus);
     await this.workordersavebtn.click();
+    
+
 
 }
 
-    async confirmationpopup() {
-        await expect(this.confirmpopup).toBeVisible();
-        await this.confirmpopup.click();
-    }
+async confirmationpopup() {
+    await expect(this.confirmpopup).toBeVisible();
+    await this.confirmpopup.click();
+    await expect(this.workorderlistpg).toBeVisible();
+}
+
+async printCreatedWorkorder(){
+    const createdworkorder = await this.newworkorder.textContent();
+        console.log("Created workorder is: " + createdworkorder);     
+  
+}
 
 }
 
