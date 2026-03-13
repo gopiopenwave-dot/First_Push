@@ -1,10 +1,11 @@
 const today = new Date();
-const tomorrow = new Date();
-tomorrow.setDate(today.getDate() + 1);
+const startdate = new Date(today.getTime() + 60 * 60 * 1000); // ← add 1 hour in milliseconds
+const tomorrow = new Date(startdate);
+tomorrow.setDate(startdate.getDate() + 1);
 
-const jobstartdate = `${String(today.getDate()).padStart(2,'0')}/${String(today.getMonth()+1).padStart(2,'0')}/${today.getFullYear()} ${String(today.getHours()).padStart(2,'0')}:${String(today.getMinutes()).padStart(2,'0')}`;
+const jobstartdate = `${String(startdate.getDate()).padStart(2,'0')}/${String(startdate.getMonth()+1).padStart(2,'0')}/${startdate.getFullYear()} ${String(startdate.getHours()).padStart(2,'0')}:${String(startdate.getMinutes()).padStart(2,'0')}`;
 
-const jobenddate = `${String(tomorrow.getDate()).padStart(2,'0')}/${String(tomorrow.getMonth()+1).padStart(2,'0')}/${tomorrow.getFullYear()} 10:20`;
+const jobenddate = `${String(tomorrow.getDate()).padStart(2,'0')}/${String(tomorrow.getMonth()+1).padStart(2,'0')}/${tomorrow.getFullYear()} ${String(tomorrow.getHours()).padStart(2,'0')}:${String(tomorrow.getMinutes()).padStart(2,'0')}`;
 
 const WorkorderTestData = {
     customername: "Amar",
