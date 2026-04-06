@@ -4,7 +4,7 @@ class Loginclass{
 
 constructor(page){
     this.page = page;
-    this.loginbutton = page.locator("#UserId");
+    this.username = page.locator("#UserId");
     this.password = page.locator("#Password");
     this.sigin = page.locator(".common-signin-btn");
     this.pageheader = page.locator(".section_header_title");
@@ -12,7 +12,7 @@ constructor(page){
 }
 
 async login(username,password){
-    await this.loginbutton.fill(username);
+    await this.username.fill(username);
     await this.password.fill(password);
     await this.sigin.click(); }
 
