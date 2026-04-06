@@ -20,13 +20,19 @@ test ('Download sample file', async ()=>{
         
 });
 
-test.only ('Download file in custom location',async ({page})=>{
+test ('Download file in custom location',async ({page})=>{
     await excelpg.navigatetoworkorder();
     const [download] = await Promise.all([page.waitForEvent('download'),excelpg.onlydownload()])
     //Set filepath
     const filepath = "downloads/Sampletemplate.xlsx"
     await download.saveAs(filepath);
     console.log("Downloaded file location :"+filepath);
+});
+
+test ('Upload xlsx file', async ({page})=>{
+    await excelpg.navigatetoworkorder();
+    
+
 
 
 })
